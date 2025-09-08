@@ -37,8 +37,8 @@ router.get('/getAllBookings',async(req,res,next)=>{
 
 router.get('/customerBookings/:customerId/:flightId', async(req,res,next)=>{
     try {
-        let customerId = parseInt(req.params.customerId);
-        let flightId = parseInt(req.params.flightId);
+        let customerId = req.params.customerId;
+        let flightId = req.params.flightId;
 
         let bookings = await fBookingService.customerBookingsByFlight(customerId,flightId);
 
@@ -67,8 +67,8 @@ router.get('/bookingsByFlight/:flightId', async(req,res,next)=>{
 
 router.put('/updateBooking/:bookingId', async(req,res,next)=>{
     try {
-        let bookingId = req.params.bookingId;
-        let noOfTickets = req.body.noOfTickets;
+        let bookingId = parseInt(req.params.bookingId);
+        let noOfTickets = parseInt(req.body.noOfTickets);
 
         let flight = await fBookingService.updateBooking(bookingId,noOfTickets);
 
