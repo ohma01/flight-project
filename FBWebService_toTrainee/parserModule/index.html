@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320" />
+    <title>Dash board</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script language="JavaScript" src="./d3.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <link rel="shortcut icon" href="./uilogo.png" type="image/x-icon">
+    <style>
+        body {
+            background: whitesmoke;
+            background-blend-mode: multiply;
+        }
+
+        .liquidFillGaugeText {
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+        .pos {
+            vertical-align: middle !important;
+        }
+
+        @keyframes loading {
+            0% {
+                --webkit-transform: scale(1);
+                font-weight: lighter;
+                color: transparent;
+            }
+
+            50% {
+                --webkit-transform: scale(1.2);
+                font-weight: 700;
+                color: blue
+            }
+
+            100% {
+                --webkit-transform: scale(1);
+                font-weight: lighter;
+                color: transparent;
+            }
+        }
+
+        #loading {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation-name: loading;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .result {
+            display: block;
+            height: 500px;
+            overflow-y: auto;
+            border: 1px solid black;
+        }
+        
+    </style>
+
+</head>
+
+<body onload="return fetchFile()">
+
+    <div class="container">
+        <br>
+        <div class="row" id="in">
+            <div class="col-md-6 offset-3">
+                <div class="form-group">
+                    <label>Enter Application Port Number</label>
+                    <input type="number" class="form-control" oninput="check()" placeholder="eg: 3000" id="port">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="verify" disabled onclick="return invoke()">Verify
+                        Code</button>
+                </div>
+                <div id="message">
+                    <h5> Start your application / Check the port number</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="load">
+            <div class="col-md-6 offset-3 text-center">
+                <div class="form-group">
+                    <img src="./gears.gif" alt="Loading...">
+                </div>
+                <div class="form-group">
+                    <h4 id="loading" class="text-center">Verifying code please wait .....</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="out">
+            <div class="col-md-10 offset-1">
+                <h3 class="text-center bg-primary text-light p-2">Code Verification Report</h3>
+                <div class="row result">
+                    <table class="table table-bordered table-light" id="result">
+                        <thead class="bg-secondary text-light">
+                            <tr>
+                                <th class="text-center">Module name</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Correctness %</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-danger" onclick="closeReport()">Close report</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById("message").className = "d-none"
+        document.getElementById("out").className = "d-none"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,591 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 24,
+    "passes": 20,
+    "pending": 0,
+    "failures": 4,
+    "start": "2025-09-08T02:02:55.706Z",
+    "end": "2025-09-08T02:02:55.917Z",
+    "duration": 211
+  },
+  "suites": [
+    {
+      "title": "Testing_App",
+      "tests": [
+        {
+          "fullTitle": "Testing_App WSA 1 - required bodyparser",
+          "title": "WSA 1 - required bodyparser",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_App WSA 2 - required requestLogger",
+          "title": "WSA 2 - required requestLogger",
+          "duration": 0,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_App WSA 3 - required router",
+          "title": "WSA 3 - required router",
+          "duration": 0,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_App WSA 4 - required errorLogger",
+          "title": "WSA 4 - required errorLogger",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_App WSA 5 - Used the middlewares in correct order",
+          "title": "WSA 5 - Used the middlewares in correct order",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        }
+      ]
+    },
+    {
+      "title": "Testing_ErrorLogger",
+      "tests": [
+        {
+          "fullTitle": "Testing_ErrorLogger WSE 1 - Response status set to 500 by default for Error",
+          "title": "WSE 1 - Response status set to 500 by default for Error",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_ErrorLogger WSE 2 - Response status is set using Error status",
+          "title": "WSE 2 - Response status is set using Error status",
+          "duration": 0,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_ErrorLogger WSE 3 - Response Should Contain Error Message",
+          "title": "WSE 3 - Response Should Contain Error Message",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        }
+      ]
+    },
+    {
+      "title": "Testing_Validator",
+      "tests": [
+        {
+          "fullTitle": "Testing_Validator WSV 1 - ValidateFlightId=> Error for invalid Flight Id",
+          "title": "WSV 1 - ValidateFlightId=> Error for invalid Flight Id",
+          "duration": 3,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Validator WSV 2 - ValidateFlightId=> Valid Flight Id, method should not return any value",
+          "title": "WSV 2 - ValidateFlightId=> Valid Flight Id, method should not return any value",
+          "duration": 1,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Validator WSV 3 - validateBookingId=> Error for invalid booking id",
+          "title": "WSV 3 - validateBookingId=> Error for invalid booking id",
+          "duration": 0,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Validator WSV 4 - validateBookingId=> Valid booking id, method should not return any value",
+          "title": "WSV 4 - validateBookingId=> Valid booking id, method should not return any value",
+          "duration": 0,
+          "result": "passed",
+          "err": {}
+        }
+      ]
+    },
+    {
+      "title": "Testing_Routing",
+      "tests": [
+        {
+          "fullTitle": "Testing_Routing WSR 1 - Response from GET /getAllBookings",
+          "title": "WSR 1 - Response from GET /getAllBookings",
+          "result": "failed",
+          "err": {
+            "message": "expected { Object (bookings) } to deeply equal [ Array(1) ]",
+            "showDiff": true,
+            "actual": {
+              "bookings": [
+                {
+                  "bookings": [
+                    {
+                      "customerId": "P1001",
+                      "bookingId": 2001,
+                      "noOfTickets": 3,
+                      "bookingCost": 1800
+                    },
+                    {
+                      "customerId": "S1001",
+                      "bookingId": 2003,
+                      "noOfTickets": 2,
+                      "bookingCost": 1200
+                    }
+                  ]
+                }
+              ]
+            },
+            "expected": [
+              {
+                "bookings": [
+                  {
+                    "customerId": "P1001",
+                    "bookingId": 2001,
+                    "noOfTickets": 3,
+                    "bookingCost": 1800
+                  },
+                  {
+                    "customerId": "S1001",
+                    "bookingId": 2003,
+                    "noOfTickets": 2,
+                    "bookingCost": 1200
+                  }
+                ]
+              }
+            ],
+            "operator": "deepStrictEqual",
+            "stack": "AssertionError: expected { Object (bookings) } to deeply equal [ Array(1) ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:13783)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+            "uncaught": true
+          }
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 2 - Error handling in GET /getAllBookings",
+          "title": "WSR 2 - Error handling in GET /getAllBookings",
+          "duration": 7,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 3 - Response from POST /bookFlight",
+          "title": "WSR 3 - Response from POST /bookFlight",
+          "duration": 42,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 4 - Error handling in POST /bookFlight",
+          "title": "WSR 4 - Error handling in POST /bookFlight",
+          "duration": 9,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 5 - Used FlightBooking Bean class in POST /bookFlight",
+          "title": "WSR 5 - Used FlightBooking Bean class in POST /bookFlight",
+          "duration": 11,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 6 - Response from PUT /updateBooking/:bookingId",
+          "title": "WSR 6 - Response from PUT /updateBooking/:bookingId",
+          "duration": 11,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 7 - Error handling in PUT /updateBooking/:bookingId",
+          "title": "WSR 7 - Error handling in PUT /updateBooking/:bookingId",
+          "duration": 9,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 8 - Proper parameters passed to updateBooking method of service",
+          "title": "WSR 8 - Proper parameters passed to updateBooking method of service",
+          "result": "failed",
+          "err": {
+            "message": "expected [ 1234, 2 ] to deeply equal [ '1234', 2 ]",
+            "showDiff": true,
+            "actual": "[\n  1234\n  2\n]",
+            "expected": "[\n  \"1234\"\n  2\n]",
+            "operator": "deepStrictEqual",
+            "stack": "AssertionError: expected [ 1234, 2 ] to deeply equal [ '1234', 2 ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:16510)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+            "uncaught": true
+          }
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 9 - Response from GET /bookingsByFlight/:flightId",
+          "title": "WSR 9 - Response from GET /bookingsByFlight/:flightId",
+          "result": "failed",
+          "err": {
+            "message": "expected { bookings: [ { …(4) }, { …(4) } ] } to deeply equal [ { customerId: 'P1001', …(3) }, …(1) ]",
+            "showDiff": true,
+            "actual": {
+              "bookings": [
+                {
+                  "customerId": "P1001",
+                  "bookingId": 2001,
+                  "noOfTickets": 3,
+                  "bookingCost": 1800
+                },
+                {
+                  "customerId": "S1001",
+                  "bookingId": 2003,
+                  "noOfTickets": 2,
+                  "bookingCost": 1200
+                }
+              ]
+            },
+            "expected": [
+              {
+                "customerId": "P1001",
+                "bookingId": 2001,
+                "noOfTickets": 3,
+                "bookingCost": 1800
+              },
+              {
+                "customerId": "S1001",
+                "bookingId": 2003,
+                "noOfTickets": 2,
+                "bookingCost": 1200
+              }
+            ],
+            "operator": "deepStrictEqual",
+            "stack": "AssertionError: expected { bookings: [ { …(4) }, { …(4) } ] } to deeply equal [ { customerId: 'P1001', …(3) }, …(1) ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:16978)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+            "uncaught": true
+          }
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 10 - Error handling in GET /bookingsByFlight/:flightId",
+          "title": "WSR 10 - Error handling in GET /bookingsByFlight/:flightId",
+          "duration": 6,
+          "result": "passed",
+          "err": {}
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 11 - Response from GET /customerBookings/:customerId/:flightId",
+          "title": "WSR 11 - Response from GET /customerBookings/:customerId/:flightId",
+          "result": "failed",
+          "err": {
+            "message": "expected { bookings: [ { …(4) } ] } to deeply equal [ { customerId: 'S1001', …(3) } ]",
+            "showDiff": true,
+            "actual": {
+              "bookings": [
+                {
+                  "customerId": "S1001",
+                  "bookingId": 2003,
+                  "noOfTickets": 2,
+                  "bookingCost": 1200
+                }
+              ]
+            },
+            "expected": [
+              {
+                "customerId": "S1001",
+                "bookingId": 2003,
+                "noOfTickets": 2,
+                "bookingCost": 1200
+              }
+            ],
+            "operator": "deepStrictEqual",
+            "stack": "AssertionError: expected { bookings: [ { …(4) } ] } to deeply equal [ { customerId: 'S1001', …(3) } ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:17704)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+            "uncaught": true
+          }
+        },
+        {
+          "fullTitle": "Testing_Routing WSR 12 - Error handling in GET /bookingsByFlight/:flightId",
+          "title": "WSR 12 - Error handling in GET /bookingsByFlight/:flightId",
+          "duration": 5,
+          "result": "passed",
+          "err": {}
+        }
+      ]
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "fullTitle": "Testing_Routing WSR 1 - Response from GET /getAllBookings",
+      "title": "WSR 1 - Response from GET /getAllBookings",
+      "result": "failed",
+      "err": {
+        "message": "expected { Object (bookings) } to deeply equal [ Array(1) ]",
+        "showDiff": true,
+        "actual": {
+          "bookings": [
+            {
+              "bookings": [
+                {
+                  "customerId": "P1001",
+                  "bookingId": 2001,
+                  "noOfTickets": 3,
+                  "bookingCost": 1800
+                },
+                {
+                  "customerId": "S1001",
+                  "bookingId": 2003,
+                  "noOfTickets": 2,
+                  "bookingCost": 1200
+                }
+              ]
+            }
+          ]
+        },
+        "expected": [
+          {
+            "bookings": [
+              {
+                "customerId": "P1001",
+                "bookingId": 2001,
+                "noOfTickets": 3,
+                "bookingCost": 1800
+              },
+              {
+                "customerId": "S1001",
+                "bookingId": 2003,
+                "noOfTickets": 2,
+                "bookingCost": 1200
+              }
+            ]
+          }
+        ],
+        "operator": "deepStrictEqual",
+        "stack": "AssertionError: expected { Object (bookings) } to deeply equal [ Array(1) ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:13783)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+        "uncaught": true
+      }
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 8 - Proper parameters passed to updateBooking method of service",
+      "title": "WSR 8 - Proper parameters passed to updateBooking method of service",
+      "result": "failed",
+      "err": {
+        "message": "expected [ 1234, 2 ] to deeply equal [ '1234', 2 ]",
+        "showDiff": true,
+        "actual": "[\n  1234\n  2\n]",
+        "expected": "[\n  \"1234\"\n  2\n]",
+        "operator": "deepStrictEqual",
+        "stack": "AssertionError: expected [ 1234, 2 ] to deeply equal [ '1234', 2 ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:16510)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+        "uncaught": true
+      }
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 9 - Response from GET /bookingsByFlight/:flightId",
+      "title": "WSR 9 - Response from GET /bookingsByFlight/:flightId",
+      "result": "failed",
+      "err": {
+        "message": "expected { bookings: [ { …(4) }, { …(4) } ] } to deeply equal [ { customerId: 'P1001', …(3) }, …(1) ]",
+        "showDiff": true,
+        "actual": {
+          "bookings": [
+            {
+              "customerId": "P1001",
+              "bookingId": 2001,
+              "noOfTickets": 3,
+              "bookingCost": 1800
+            },
+            {
+              "customerId": "S1001",
+              "bookingId": 2003,
+              "noOfTickets": 2,
+              "bookingCost": 1200
+            }
+          ]
+        },
+        "expected": [
+          {
+            "customerId": "P1001",
+            "bookingId": 2001,
+            "noOfTickets": 3,
+            "bookingCost": 1800
+          },
+          {
+            "customerId": "S1001",
+            "bookingId": 2003,
+            "noOfTickets": 2,
+            "bookingCost": 1200
+          }
+        ],
+        "operator": "deepStrictEqual",
+        "stack": "AssertionError: expected { bookings: [ { …(4) }, { …(4) } ] } to deeply equal [ { customerId: 'P1001', …(3) }, …(1) ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:16978)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+        "uncaught": true
+      }
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 11 - Response from GET /customerBookings/:customerId/:flightId",
+      "title": "WSR 11 - Response from GET /customerBookings/:customerId/:flightId",
+      "result": "failed",
+      "err": {
+        "message": "expected { bookings: [ { …(4) } ] } to deeply equal [ { customerId: 'S1001', …(3) } ]",
+        "showDiff": true,
+        "actual": {
+          "bookings": [
+            {
+              "customerId": "S1001",
+              "bookingId": 2003,
+              "noOfTickets": 2,
+              "bookingCost": 1200
+            }
+          ]
+        },
+        "expected": [
+          {
+            "customerId": "S1001",
+            "bookingId": 2003,
+            "noOfTickets": 2,
+            "bookingCost": 1200
+          }
+        ],
+        "operator": "deepStrictEqual",
+        "stack": "AssertionError: expected { bookings: [ { …(4) } ] } to deeply equal [ { customerId: 'S1001', …(3) } ]\n    at Test.<anonymous> (test\\codeverification.spec.js:1:17704)\n    at Test.assert (node_modules\\supertest\\lib\\test.js:181:6)\n    at Server.localAssert (node_modules\\supertest\\lib\\test.js:131:12)\n    at Object.onceWrapper (node:events:632:28)\n    at Server.emit (node:events:518:28)\n    at emitCloseNT (node:net:2419:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+        "uncaught": true
+      }
+    }
+  ],
+  "passes": [
+    {
+      "fullTitle": "Testing_App WSA 1 - required bodyparser",
+      "title": "WSA 1 - required bodyparser",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_App WSA 2 - required requestLogger",
+      "title": "WSA 2 - required requestLogger",
+      "duration": 0,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_App WSA 3 - required router",
+      "title": "WSA 3 - required router",
+      "duration": 0,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_App WSA 4 - required errorLogger",
+      "title": "WSA 4 - required errorLogger",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_App WSA 5 - Used the middlewares in correct order",
+      "title": "WSA 5 - Used the middlewares in correct order",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_ErrorLogger WSE 1 - Response status set to 500 by default for Error",
+      "title": "WSE 1 - Response status set to 500 by default for Error",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_ErrorLogger WSE 2 - Response status is set using Error status",
+      "title": "WSE 2 - Response status is set using Error status",
+      "duration": 0,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_ErrorLogger WSE 3 - Response Should Contain Error Message",
+      "title": "WSE 3 - Response Should Contain Error Message",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Validator WSV 1 - ValidateFlightId=> Error for invalid Flight Id",
+      "title": "WSV 1 - ValidateFlightId=> Error for invalid Flight Id",
+      "duration": 3,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Validator WSV 2 - ValidateFlightId=> Valid Flight Id, method should not return any value",
+      "title": "WSV 2 - ValidateFlightId=> Valid Flight Id, method should not return any value",
+      "duration": 1,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Validator WSV 3 - validateBookingId=> Error for invalid booking id",
+      "title": "WSV 3 - validateBookingId=> Error for invalid booking id",
+      "duration": 0,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Validator WSV 4 - validateBookingId=> Valid booking id, method should not return any value",
+      "title": "WSV 4 - validateBookingId=> Valid booking id, method should not return any value",
+      "duration": 0,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 2 - Error handling in GET /getAllBookings",
+      "title": "WSR 2 - Error handling in GET /getAllBookings",
+      "duration": 7,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 3 - Response from POST /bookFlight",
+      "title": "WSR 3 - Response from POST /bookFlight",
+      "duration": 42,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 4 - Error handling in POST /bookFlight",
+      "title": "WSR 4 - Error handling in POST /bookFlight",
+      "duration": 9,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 5 - Used FlightBooking Bean class in POST /bookFlight",
+      "title": "WSR 5 - Used FlightBooking Bean class in POST /bookFlight",
+      "duration": 11,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 6 - Response from PUT /updateBooking/:bookingId",
+      "title": "WSR 6 - Response from PUT /updateBooking/:bookingId",
+      "duration": 11,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 7 - Error handling in PUT /updateBooking/:bookingId",
+      "title": "WSR 7 - Error handling in PUT /updateBooking/:bookingId",
+      "duration": 9,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 10 - Error handling in GET /bookingsByFlight/:flightId",
+      "title": "WSR 10 - Error handling in GET /bookingsByFlight/:flightId",
+      "duration": 6,
+      "result": "passed",
+      "err": {}
+    },
+    {
+      "fullTitle": "Testing_Routing WSR 12 - Error handling in GET /bookingsByFlight/:flightId",
+      "title": "WSR 12 - Error handling in GET /bookingsByFlight/:flightId",
+      "duration": 5,
+      "result": "passed",
+      "err": {}
+    }
+  ]
+}

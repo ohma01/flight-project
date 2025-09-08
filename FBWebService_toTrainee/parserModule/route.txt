@@ -1,0 +1,10 @@
+router.get('/test', (req, res, next) => {
+    tester()
+        .then((data) => {
+            console.log("--- Evaluation Completed ---")
+            opn("http://localhost:5500/parserModule/index.html", { app: 'chrome'})
+            res.end()
+        }).catch((err) => {
+            next(err)
+        })
+})

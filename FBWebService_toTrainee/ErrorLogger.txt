@@ -1,0 +1,52 @@
+Mon Sep 08 2025 : Error: No Bookings is found in any flight
+    at fBookingService.getAllBookings (C:\Users\pushpa\Desktop\FBWebService_toTrainee\src\service\users.js:69:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\pushpa\Desktop\FBWebService_toTrainee\src\routes\routing.js:28:25 
+Mon Sep 08 2025 : Error: ErrorLogger test
+    at Context.<anonymous> (C:\Users\pushpa\Desktop\FBWebService_toTrainee\test\codeverification.spec.js:1:10509)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:372:21)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at Runner.runTest (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:455:10)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:573:12
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:369:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:379:7
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:303:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:342:7
+    at done (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:319:5)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:395:7)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:317:10)
+    at Immediate._onImmediate (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:347:5)
+    at process.processImmediate (node:internal/timers:485:21) 
+Mon Sep 08 2025 : Error: ErrorLogger test
+    at Context.<anonymous> (C:\Users\pushpa\Desktop\FBWebService_toTrainee\test\codeverification.spec.js:1:10688)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:372:21)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at Runner.runTest (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:455:10)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:573:12
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:369:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:379:7
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:303:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:342:7
+    at done (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:319:5)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:395:7)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:317:10)
+    at Immediate._onImmediate (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:347:5)
+    at process.processImmediate (node:internal/timers:485:21) 
+Mon Sep 08 2025 : Error: ErrorLogger test
+    at Context.<anonymous> (C:\Users\pushpa\Desktop\FBWebService_toTrainee\test\codeverification.spec.js:1:10896)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:372:21)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at Runner.runTest (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:455:10)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:573:12
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:369:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:379:7
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:303:14)
+    at C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:342:7
+    at done (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:319:5)
+    at callFn (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:395:7)
+    at Runnable.run (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runnable.js:364:7)
+    at next (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:317:10)
+    at Immediate._onImmediate (C:\Users\pushpa\Desktop\FBWebService_toTrainee\node_modules\mocha\lib\runner.js:347:5)
+    at process.processImmediate (node:internal/timers:485:21) 
