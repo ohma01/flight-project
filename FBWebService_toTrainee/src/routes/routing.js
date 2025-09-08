@@ -28,9 +28,7 @@ router.get('/getAllBookings',async(req,res,next)=>{
         let bookings =  await fBookingService.getAllBookings();
 
         return res.status(200).json(
-            {
-                "bookings":bookings
-            }
+             bookings    
         )
     } catch (error) {
         return next(error);
@@ -39,15 +37,13 @@ router.get('/getAllBookings',async(req,res,next)=>{
 
 router.get('/customerBookings/:customerId/:flightId', async(req,res,next)=>{
     try {
-        let customerId = req.params.customerId;
-        let flightId = req.params.flightId;
+        let customerId = parseInt(req.params.customerId);
+        let flightId = parseInt(req.params.flightId);
 
         let bookings = await fBookingService.customerBookingsByFlight(customerId,flightId);
 
         return res.status(200).json(
-            {
-                "bookings" : bookings
-            }
+            bookings
         )
     } catch (error) {
         return next(error);
@@ -62,9 +58,7 @@ router.get('/bookingsByFlight/:flightId', async(req,res,next)=>{
         let bookings = await fBookingService.getbookingsByFlightId(flightId);
 
         return res.status(200).json(
-            {
-                "bookings" : bookings
-            }
+            bookings
         )
     } catch (error) {
         return next(error);
